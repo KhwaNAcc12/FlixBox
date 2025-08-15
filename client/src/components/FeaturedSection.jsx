@@ -21,11 +21,20 @@ const FeaturedSection = () => {
             <ArrowRight className='group-hover:translate-x-0.5 transition w-4.5 h-4.5'/>
           </button>
       </div>
-
-      <div className='flex flex-wrap max-sm:justify-center gap-8 mt-8'>
+      {/* og code */}
+      {/* <div className='flex flex-wrap max-sm:justify-center gap-8 mt-8'>
         {shows.slice(0, 4).map((show)=>(
             <MovieCard key={show._id} movie={show}/>
         ))}
+      </div> */}
+      {/* Ai code */}
+      <div className='flex flex-wrap max-sm:justify-center gap-8 mt-8'>
+        {shows
+          .filter(show => show && show._id)
+          .slice(0, 4)
+          .map(show => (
+            <MovieCard key={show._id} movie={show} />
+          ))}
       </div>
 
       <div className='flex justify-center mt-20'>
