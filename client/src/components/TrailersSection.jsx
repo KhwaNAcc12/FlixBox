@@ -14,7 +14,14 @@ const TrailersSection = () => {
 
       <div className='relative mt-6'>
         <BlurCircle top='-100px' right='-100px'/>
-        <ReactPlayer url={currentTrailer.videoUrl} controls={false} className="mx-auto max-w-full" width="960px" height="540px"/>
+        <ReactPlayer url={currentTrailer.videoUrl} controls={false} className="mx-auto max-w-full" width="960px" height="540px" config={{
+    youtube: {
+      playerVars: {
+        origin: window.location.origin
+      }
+    }
+  }}/>
+
       </div>
 
       <div className='group grid grid-cols-4 gap-4 md:gap-8 mt-8 max-w-3xl mx-auto'>
